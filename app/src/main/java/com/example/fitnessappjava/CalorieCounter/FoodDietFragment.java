@@ -843,7 +843,11 @@ public class FoodDietFragment extends Fragment {
 
             db.update("food", "_id", rowID, fields, values);
             Toast.makeText(getActivity(), "Changes saved", Toast.LENGTH_SHORT).show();
+
+            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.flContent, new FoodDietFragment(), FoodDietFragment.class.getName()).commit();
         }
+        db.close();
     }
     
     //Delete food
@@ -1225,8 +1229,13 @@ public class FoodDietFragment extends Fragment {
                     stringSubCategoryIDSQL;
 
             db.insert("food", fields, values);
-            Toast.makeText(getActivity(), "Changes saved", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), "Food created", Toast.LENGTH_SHORT).show();
+
+            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+            fragmentManager.beginTransaction().replace(R.id.flContent, new FoodDietFragment(), FoodDietFragment.class.getName()).commit();
+
         }
+        db.close();
     }
 
 }

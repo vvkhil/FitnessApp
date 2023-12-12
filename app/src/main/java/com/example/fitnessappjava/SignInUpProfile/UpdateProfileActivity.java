@@ -19,6 +19,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fitnessappjava.CalorieCounter.DBAdapter;
+import com.example.fitnessappjava.CalorieCounter.SignUpDiet;
 import com.example.fitnessappjava.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -191,6 +193,27 @@ public class UpdateProfileActivity extends AppCompatActivity {
 
             //Enter User Data into the Firebase Realtime Database. Set up dependencies
             ReadWriteUserDetails writeUserDetails = new ReadWriteUserDetails(textDoB, textGender, textMobile);
+
+            long id = 1;
+
+            //Insert into database
+            DBAdapter db = new DBAdapter(UpdateProfileActivity.this);
+            db.open();
+
+            //Quote smart
+            String dateOfBirthSQL = db.quoteSmart(textDoB);
+            String stringGenderSQL = db.quoteSmart(textGender.toLowerCase());
+
+            String fields[] = new String[] {
+                    "user_dob",
+                    "user_gender"
+            };
+            String values[] = new String[] {
+                    dateOfBirthSQL,
+                    stringGenderSQL
+            };
+
+            db.update("users", "_id", id, fields, values);
 
             //Extract User reference from Database for "Registered Users"
             DatabaseReference referenceProfile = FirebaseDatabase.getInstance().getReference("Registered Users");
