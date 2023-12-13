@@ -95,6 +95,17 @@ public class SignUpGoal extends AppCompatActivity {
             String stringUserHeight = cursor.getString(3);
             String stringUserActivityLevel = cursor.getString(4);
 
+            int intUserActivityLevel = 0;
+            try {
+                intUserActivityLevel = Integer.parseInt(stringUserActivityLevel);
+            } catch (NumberFormatException nfe) {
+                System.out.println(nfe);
+            }
+
+            int intUserActivityLevelSQL = db.quoteSmart(intUserActivityLevel);
+
+            db.update("goal", "_id", goalID, "goal_activity_level", intUserActivityLevelSQL);
+
             //Get age
             String textSADoB[] = stringUserDob.split("-");
 
@@ -174,10 +185,10 @@ public class SignUpGoal extends AppCompatActivity {
             kcal = 7700 * doubleWeeklyGoal;
             if (intWeeklyGoals == 0) {
                 // Loose weight
-                energyDiet = Math.round(bmr - (kcal / 7));
+                energyDiet = Math.round((bmr - (kcal / 7)) * 1.2);
             } else {
                 // Gain weight
-                energyDiet = Math.round(bmr + (kcal / 7));
+                energyDiet = Math.round((bmr + (kcal / 7)) * 1.2);
             }
 
             // Update database

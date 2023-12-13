@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class DBAdapter {
     //Variables
     private static final String databaseName = "stramdiet";
-    private static final int databaseVersion = 20;
+    private static final int databaseVersion = 24;
 
     //Database Variables
     private final Context context;
@@ -43,6 +43,7 @@ public class DBAdapter {
                         " goal_i_want_to VARCHAR," +
                         " goal_weekly_goal VARCHAR," +
                         " goal_date DATE," +
+                        " goal_activity_level INT," +
                         " goal_energy_bmr INT," +
                         " goal_proteins_bmr INT," +
                         " goal_carbs_bmr INT," +
