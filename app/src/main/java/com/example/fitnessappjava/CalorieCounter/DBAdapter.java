@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class DBAdapter {
     //Variables
     private static final String databaseName = "stramdiet";
-    private static final int databaseVersion = 24;
+    private static final int databaseVersion = 25;
 
     //Database Variables
     private final Context context;
@@ -99,8 +99,10 @@ public class DBAdapter {
                         " fd_date DATE," +
                         " fd_meal_number INT," +
                         " fd_food_id INT," +
-                        " fd_serving_size DOUBLE," +
-                        " fd_serving_mesurment VARCHAR," +
+                        " fd_serving_size_gram DOUBLE," +
+                        " fd_serving_size_gram_mesurment VARCHAR," +
+                        " fd_serving_size_pcs DOUBLE," +
+                        " fd_serving_size_pcs_mesurment VARCHAR," +
                         " fd_energy_calculated DOUBLE," +
                         " fd_protein_calculated DOUBLE," +
                         " fd_carbohydrates_calculated DOUBLE," +
@@ -121,10 +123,10 @@ public class DBAdapter {
                         " food_name VARCHAR," +
                         " food_manufactor_name VARCHAR," +
                         " food_description VARCHAR," +
-                        " food_serving_size DOUBLE," +
-                        " food_serving_mesurment VARCHAR," +
-                        " food_serving_name_number DOUBLE," +
-                        " food_serving_name_word VARCHAR," +
+                        " food_serving_size_gram DOUBLE," +
+                        " food_serving_size_gram_mesurment VARCHAR," +
+                        " food_serving_size_pcs DOUBLE," +
+                        " food_serving_size_pcs_mesurment VARCHAR," +
                         " food_energy DOUBLE," +
                         " food_proteins DOUBLE," +
                         " food_carbohydrates DOUBLE," +

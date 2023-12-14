@@ -38,10 +38,10 @@ public class FoodCursorAdapter extends CursorAdapter {
 
         String getManufactorName = cursor.getString(cursor.getColumnIndexOrThrow("food_manufactor_name"));
         String getDescription = cursor.getString(cursor.getColumnIndexOrThrow("food_description"));
-        String getServingSize = cursor.getString(cursor.getColumnIndexOrThrow("food_serving_size"));
-        String getServingMesurment = cursor.getString(cursor.getColumnIndexOrThrow("food_serving_mesurment"));
-        String getServingNameNumber = cursor.getString(cursor.getColumnIndexOrThrow("food_serving_name_number"));
-        String getServingNameWord = cursor.getString(cursor.getColumnIndexOrThrow("food_serving_name_word"));
+        String getServingSize = cursor.getString(cursor.getColumnIndexOrThrow("food_serving_size_gram"));
+        String getServingMesurment = cursor.getString(cursor.getColumnIndexOrThrow("food_serving_size_gram_mesurment"));
+        String getServingNameNumber = cursor.getString(cursor.getColumnIndexOrThrow("food_serving_size_pcs"));
+        String getServingNameWord = cursor.getString(cursor.getColumnIndexOrThrow("food_serving_size_pcs_mesurment"));
 
         String subLine = getManufactorName + ", " + getDescription + ", " + getServingSize + ", " + getServingMesurment +
                 ", " + getServingNameNumber + ", " + getServingNameWord;

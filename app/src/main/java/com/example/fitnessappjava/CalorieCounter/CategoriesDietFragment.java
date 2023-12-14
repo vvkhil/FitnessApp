@@ -357,10 +357,10 @@ public class CategoriesDietFragment extends Fragment implements
                     "food_name",
                     "food_manufactor_name",
                     "food_description",
-                    "food_serving_size",
-                    "food_serving_mesurment",
-                    "food_serving_name_number",
-                    "food_serving_name_word",
+                    "food_serving_size_gram",
+                    "food_serving_size_gram_mesurment",
+                    "food_serving_size_pcs",
+                    "food_serving_size_pcs_mesurment",
                     "food_energy_calculated"
             };
 
