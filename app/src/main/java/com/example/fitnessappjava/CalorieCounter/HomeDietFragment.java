@@ -2,6 +2,7 @@ package com.example.fitnessappjava.CalorieCounter;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -19,10 +20,12 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.fitnessappjava.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -41,6 +44,12 @@ public class HomeDietFragment extends Fragment {
     //Holder for buttons on toolbar
     private String currentId;
     private String currentName;
+
+    //Holding variables
+    private String currentDateYear = "";
+    private String currentDateMonth = "";
+    private String currentDateDay = "";
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -138,6 +147,41 @@ public class HomeDietFragment extends Fragment {
     //Initialize home
     private void initializeHome() {
 
+        //Database
+        DBAdapter db = new DBAdapter(getActivity());
+        db.open();
+
+        //Find date
+        if (currentDateYear.equals("") || currentDateMonth.equals("") || currentDateDay.equals("")) {
+            Calendar calendar = Calendar.getInstance();
+            int year = calendar.get(Calendar.YEAR);
+            int month = calendar.get(Calendar.MONTH);
+            int day = calendar.get(Calendar.DAY_OF_YEAR);
+
+            currentDateYear = "" + year;
+
+            //Month
+            month = month + 1; //Month starts with 0
+            if (month < 10) {
+                currentDateMonth = "0" + month;
+            } else {
+                currentDateMonth = "" + month;
+            }
+
+            //Day
+            if (day < 10) {
+                currentDateDay = "0" + day;
+            } else {
+                currentDateDay = "" + day;
+            }
+
+        }
+        String stringFdDate = currentDateYear + "-" + currentDateMonth + "-" + currentDateDay;
+
+
+        //Fill table
+        updateTable(stringFdDate, "0");
+
         //Breakfast listener
         ImageView imageViewAddBreakfast = (ImageView) getActivity().findViewById(R.id.imageViewBreakfast);
         imageViewAddBreakfast.setOnClickListener(new View.OnClickListener() {
@@ -147,8 +191,49 @@ public class HomeDietFragment extends Fragment {
             }
         });
 
+        db.close();
+
     }
 
+    //Update table
+    public void updateTable(String stringDate, String stringMealNumber) {
+
+        //Database
+        DBAdapter db = new DBAdapter(getActivity());
+        db.open();
+
+        //Select
+        String fields[] = new String[] {
+                " _id",
+                " fd_food_id",
+                " fd_serving_size_gram",
+                " fd_serving_size_gram_mesurment",
+                " fd_serving_size_pcs",
+                " fd_serving_size_pcs_mesurment",
+                " fd_energy_calculated",
+                " fd_protein_calculated",
+                " fd_carbohydrates_calculated",
+                " fd_fat_calculated"
+        };
+        Cursor cursorFd = db.select("food_diary", fields, "fd_date", stringDate);
+
+        //Loop through cursor
+        int intCursorFdCount = cursorFd.getCount();
+        for (int x = 0; x < intCursorFdCount; x++) {
+
+            cursorFd.moveToNext();
+
+        }
+
+        //Update table
+        TextView textViewBreakfastItemsName = (TextView) getActivity().findViewById(R.id.textViewBreakfastItemsName);
+        //textViewBreakfastItemsName.setText(cursorFd.getString(2));
+
+        db.close();
+
+    }
+
+    //Add food
     private void addFood(int mealNumber) {
 
         //Initialize fragment

@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class DBAdapter {
     //Variables
     private static final String databaseName = "stramdiet";
-    private static final int databaseVersion = 25;
+    private static final int databaseVersion = 26;
 
     //Database Variables
     private final Context context;
@@ -107,7 +107,7 @@ public class DBAdapter {
                         " fd_protein_calculated DOUBLE," +
                         " fd_carbohydrates_calculated DOUBLE," +
                         " fd_fat_calculated DOUBLE," +
-                        " fd_fat_meal_id INT);");
+                        " fd_meal_id INT);");
 
                 db.execSQL("CREATE TABLE IF NOT EXISTS categories (" +
                         " _id INTEGER PRIMARY KEY AUTOINCREMENT," +
