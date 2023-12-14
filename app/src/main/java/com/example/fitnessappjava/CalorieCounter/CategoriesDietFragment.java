@@ -335,6 +335,62 @@ public class CategoriesDietFragment extends Fragment implements
 
         //Move to sub class
         populateList(currentId, currentName);
+
+        //Show food in category
+        showFoodInCategory(currentId, currentName, parentID);
+    }
+
+    //Show food in category
+    public void showFoodInCategory(String categoryId, String categoryName, String categoryParentID) {
+        if (!(categoryParentID.equals("0"))) {
+            //Change layout
+            int id = R.layout.fragment_food_diet;
+            setMainView(id);
+
+            //Database
+            DBAdapter db = new DBAdapter(getActivity());
+            db.open();
+
+            //Get categories
+            String fields[] = new String[] {
+                    "_id",
+                    "food_name",
+                    "food_manufactor_name",
+                    "food_description",
+                    "food_serving_size",
+                    "food_serving_mesurment",
+                    "food_serving_name_number",
+                    "food_serving_name_word",
+                    "food_energy_calculated"
+            };
+
+            categoriesCursor = db.select("food", fields, "food_category_id", categoryId, "food_name", "ASC");
+
+            //Find listView to populate
+            ListView listView = (ListView)getActivity().findViewById(R.id.listViewFood);
+
+            //Setup cursor adapter using cursor from last step
+            FoodCursorAdapter cursorAdapter = new FoodCursorAdapter(getActivity(), categoriesCursor);
+
+            listView.setAdapter(cursorAdapter);
+
+            //OnClick
+
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    foodListItemClicked(position);
+                }
+            });
+
+
+            db.close();
+        }
+    }
+
+    //Food list item clicked
+    private void foodListItemClicked(int intFoodListItemIndex) {
+
     }
 
     //Edit category

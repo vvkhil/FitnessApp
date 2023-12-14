@@ -302,7 +302,6 @@ public class FoodDietFragment extends Fragment {
         textViewFoodCarbsPerN.setText(stringCarbohydratesCalculated);
         textViewFoodFatPerN.setText(stringFatCalculated);
 
-
         db.close();
 
     }

@@ -27,6 +27,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.fitnessappjava.R;
+import com.google.android.material.navigation.NavigationView;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -35,9 +36,10 @@ import java.util.Calendar;
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link GoalDietFragment#newInstance} factory method to
+ * {@link GoalDietFragment}
  * create an instance of this fragment.
  */
-public class GoalDietFragment extends Fragment {
+public class GoalDietFragment extends Fragment implements NavigationView.OnNavigationItemSelectedListener {
 
     private View mainView;
 
@@ -941,4 +943,8 @@ public class GoalDietFragment extends Fragment {
         db.close();
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
+    }
 }

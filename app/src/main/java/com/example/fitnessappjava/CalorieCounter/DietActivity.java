@@ -17,14 +17,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.fitnessappjava.R;
-import com.example.fitnessappjava.SignInUpProfile.UpdateEmailActivity;
-import com.example.fitnessappjava.SignInUpProfile.UpdateProfileActivity;
-import com.example.fitnessappjava.SignInUpProfile.UserProfileActivity;
-import com.facebook.stetho.Stetho;
-import com.facebook.stetho.okhttp3.StethoInterceptor;
 import com.google.android.material.navigation.NavigationView;
 
-import okhttp3.OkHttpClient;
 
 public class DietActivity extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
