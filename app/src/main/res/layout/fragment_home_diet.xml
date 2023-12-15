@@ -49,110 +49,410 @@
 
             </LinearLayout>
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginTop="-50dp"
+                android:orientation="vertical"
                 android:background="@drawable/border"
                 android:padding="15dp">
 
-                <RelativeLayout
-                    android:id="@+id/RL_mesurments"
-                    android:layout_width="match_parent"
+                <TableLayout
+                    android:id="@+id/tableLayoutBreakfast"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/border">
 
-                    <ImageView
-                        android:id="@+id/imageViewBreakfast"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="15dp"
-                        app:srcCompat="@drawable/ic_menu_add"/>
+                    <TableRow
+                        android:id="@+id/tableRowHeadlineBreakfast"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/textViewHeadlineBreakfast"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_toEndOf="@+id/imageViewBreakfast"
-                        android:padding="6dp"
-                        android:text="Breakfast" />
+                        <ImageView
+                            android:id="@+id/imageViewBreakfast"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_weight="10"
+                            app:srcCompat="@drawable/ic_menu_add"/>
 
-                    <TextView
-                        android:id="@+id/textViewEnergyBreakfast"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="105dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_toEndOf="@+id/textViewHeadlineBreakfast"
-                        android:padding="6dp"
-                        android:text="Energy" />
+                        <TextView
+                            android:id="@+id/textViewHeadlineBreakfast"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="80"
+                            android:padding="6dp"
+                            android:text="Breakfast" />
 
-                    <View
-                        android:id="@+id/dividerBreakfast"
-                        android:layout_width="250dp"
-                        android:layout_height="1dp"
-                        android:layout_below="@id/imageViewBreakfast"
-                        android:layout_centerHorizontal="true"
-                        android:background="@android:color/darker_gray" />
+                        <TextView
+                            android:id="@+id/textViewEnergyBreakfast"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="10"
+                            android:padding="6dp"
+                            android:text="Energy" />
 
-                    <TextView
-                        android:id="@+id/textViewBreakfastItemsName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_below="@+id/dividerBreakfast"
-                        android:padding="6dp"
-                        android:text="Name" />
+                    </TableRow>
 
-                    <TextView
-                        android:id="@+id/textViewBreakfastItemsEnergy"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="155dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_below="@+id/dividerBreakfast"
-                        android:layout_toEndOf="@+id/textViewBreakfastItemsName"
-                        android:padding="6dp"
-                        android:text="Energy" />
+                </TableLayout>
 
-                    <View
-                        android:id="@+id/dividerBreakfastItems"
-                        android:layout_width="250dp"
-                        android:layout_height="1dp"
-                        android:layout_below="@id/textViewBreakfastItemsName"
-                        android:layout_centerHorizontal="true"
-                        android:background="@android:color/darker_gray" />
+                <TableLayout
+                    android:id="@+id/tableLayoutBreakfastItems"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border">
 
-                    <TextView
-                        android:id="@+id/textViewBreakfastItemsSub"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_below="@+id/dividerBreakfastItems"
-                        android:padding="6dp"
-                        android:text="Name" />
+                </TableLayout>
 
-                </RelativeLayout>
+                <TableLayout
+                    android:id="@+id/tableLayoutLunch"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/border">
 
-            </RelativeLayout>
+                    <TableRow
+                        android:id="@+id/tableRowHeadlineLunch"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageViewLunch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_weight="10"
+                            app:srcCompat="@drawable/ic_menu_add"/>
+
+                        <TextView
+                            android:id="@+id/textViewHeadlineLunch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="80"
+                            android:padding="6dp"
+                            android:text="Lunch" />
+
+                        <TextView
+                            android:id="@+id/textViewEnergyLunch"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="10"
+                            android:padding="6dp"
+                            android:text="Energy" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/tableLayoutLunchItems"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border">
+
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/tableLayoutBeforeTraining"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/border">
+
+                    <TableRow
+                        android:id="@+id/tableRowHeadlineBeforeTraining"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageViewBeforeTraining"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_weight="10"
+                            app:srcCompat="@drawable/ic_menu_add"/>
+
+                        <TextView
+                            android:id="@+id/textViewHeadlineBeforeTraining"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="80"
+                            android:padding="6dp"
+                            android:text="Before training" />
+
+                        <TextView
+                            android:id="@+id/textViewEnergyBeforeTraining"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="10"
+                            android:padding="6dp"
+                            android:text="Energy" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/tableLayoutBeforeTrainingItems"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border">
+
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/tableLayoutAfterTraining"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/border">
+
+                    <TableRow
+                        android:id="@+id/tableRowHeadlineAfterTraining"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageViewAfterTraining"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_weight="10"
+                            app:srcCompat="@drawable/ic_menu_add"/>
+
+                        <TextView
+                            android:id="@+id/textViewHeadlineAfterTraining"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="80"
+                            android:padding="6dp"
+                            android:text="After training" />
+
+                        <TextView
+                            android:id="@+id/textViewEnergyAfterTraining"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="10"
+                            android:padding="6dp"
+                            android:text="Energy" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/tableLayoutAfterTrainingItems"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border">
+
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/tableLayoutDinner"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/border">
+
+                    <TableRow
+                        android:id="@+id/tableRowHeadlineDinner"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageViewDinner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_weight="10"
+                            app:srcCompat="@drawable/ic_menu_add"/>
+
+                        <TextView
+                            android:id="@+id/textViewHeadlineDinner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="80"
+                            android:padding="6dp"
+                            android:text="Dinner" />
+
+                        <TextView
+                            android:id="@+id/textViewEnergyDinner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="10"
+                            android:padding="6dp"
+                            android:text="Energy" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/tableLayoutDinnerItems"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border">
+
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/tableLayoutSnacks"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/border">
+
+                    <TableRow
+                        android:id="@+id/tableRowHeadlineSnacks"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageViewSnacks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_weight="10"
+                            app:srcCompat="@drawable/ic_menu_add"/>
+
+                        <TextView
+                            android:id="@+id/textViewHeadlineSnacks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="80"
+                            android:padding="6dp"
+                            android:text="Snacks" />
+
+                        <TextView
+                            android:id="@+id/textViewEnergySnacks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="10"
+                            android:padding="6dp"
+                            android:text="Energy" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/tableLayoutSnacksItems"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border">
+
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/tableLayoutSupper"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/border">
+
+                    <TableRow
+                        android:id="@+id/tableRowHeadlineSupper"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imageViewSupper"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_weight="10"
+                            app:srcCompat="@drawable/ic_menu_add"/>
+
+                        <TextView
+                            android:id="@+id/textViewHeadlineSupper"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="80"
+                            android:padding="6dp"
+                            android:text="Supper" />
+
+                        <TextView
+                            android:id="@+id/textViewEnergySupper"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="10"
+                            android:padding="6dp"
+                            android:text="Energy" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <TableLayout
+                    android:id="@+id/tableLayoutSupperItems"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/border">
+
+                </TableLayout>
+
+            </LinearLayout>
 
         </LinearLayout>
 

@@ -94,7 +94,7 @@
                     android:background="@drawable/border">
 
                     <TextView
-                        android:id="@+id/textViewPortionSizePcs"
+                        android:id="@+id/textViewServingSizePcs"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
@@ -103,14 +103,14 @@
                         android:text="Portion size" />
 
                     <EditText
-                        android:id="@+id/editTextPortionSizePcs"
+                        android:id="@+id/editTextServingSizePcs"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_toEndOf="@id/textViewPortionSizePcs"
+                        android:layout_toEndOf="@id/textViewServingSizePcs"
                         android:inputType="number"
                         android:padding="6dp"
                         android:textCursorDrawable="@drawable/edittextcursor"
@@ -118,46 +118,46 @@
                         android:ems="3"/>
 
                     <TextView
-                        android:id="@+id/textViewPortionPcs"
+                        android:id="@+id/textViewServingSizePcsMesurment"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_toEndOf="@id/editTextPortionSizePcs"
+                        android:layout_toEndOf="@id/editTextServingSizePcs"
                         android:padding="6dp"
                         android:text="pcs"
                         android:textColor="@color/black" />
 
                     <View
-                        android:id="@+id/dividerPortionSizePcs"
+                        android:id="@+id/dividerServingSizePcs"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_below="@id/textViewPortionSizePcs"
+                        android:layout_below="@id/textViewServingSizePcs"
                         android:layout_centerHorizontal="true"
                         android:background="@android:color/darker_gray" />
 
                     <TextView
-                        android:id="@+id/textViewPortionSizeGram"
+                        android:id="@+id/textViewServingSizeGram"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="10dp"
                         android:padding="6dp"
-                        android:layout_below="@+id/dividerPortionSizePcs"
+                        android:layout_below="@+id/dividerServingSizePcs"
                         android:textColor="@color/black"
                         android:text="Portion size" />
 
                     <EditText
-                        android:id="@+id/editTextPortionSizeGram"
+                        android:id="@+id/editTextServingSizeGram"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginEnd="10dp"
                         android:layout_marginBottom="10dp"
-                        android:layout_below="@+id/dividerPortionSizePcs"
-                        android:layout_toEndOf="@id/textViewPortionSizeGram"
+                        android:layout_below="@+id/dividerServingSizePcs"
+                        android:layout_toEndOf="@id/textViewServingSizeGram"
                         android:inputType="number"
                         android:padding="6dp"
                         android:textCursorDrawable="@drawable/edittextcursor"
@@ -165,26 +165,38 @@
                         android:ems="3"/>
 
                     <TextView
-                        android:id="@+id/textViewPortionGram"
+                        android:id="@+id/textViewServingSizeGramMesurment"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="10dp"
+                        android:layout_below="@+id/dividerServingSizePcs"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@id/editTextServingSizeGram"
                         android:padding="6dp"
-                        android:layout_below="@+id/dividerPortionSizePcs"
-                        android:layout_toEndOf="@id/editTextPortionSizeGram"
-                        android:textColor="@color/black"
-                        android:text="gram" />
+                        android:text="gram"
+                        android:textColor="@color/black" />
 
                 </RelativeLayout>
 
                 <Button
-                    android:id="@+id/buttonAddToDiary"
-                    android:layout_width="190dp"
+                    android:id="@+id/buttonSubmitEdit"
+                    android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/RL_portions"
-                    android:layout_centerHorizontal="true"
                     android:layout_marginTop="30dp"
-                    android:text="Add to diary" />
+                    android:text="Edit" />
+
+                <Button
+                    android:id="@+id/buttonSubmitDelete"
+                    android:layout_width="150dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/RL_portions"
+                    android:layout_toEndOf="@+id/buttonSubmitEdit"
+                    android:layout_marginTop="30dp"
+                    android:text="Delete" />
 
                 <RelativeLayout
                     android:id="@+id/RL_calories_table"

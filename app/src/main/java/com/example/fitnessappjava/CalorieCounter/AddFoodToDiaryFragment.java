@@ -372,14 +372,14 @@ public class AddFoodToDiaryFragment extends Fragment {
         textViewFoodManufactorName.setText(stringManufactorName);
 
         //Portion size
-        EditText editTextPortionSizePcs = (EditText) getActivity().findViewById(R.id.editTextPotionSizePcs);
+        EditText editTextPortionSizePcs = (EditText) getActivity().findViewById(R.id.editTextPortionSizePcs);
         editTextPortionSizePcs.setText(stringServingNameNumber);
 
-        TextView textViewPcs = (TextView) getActivity().findViewById(R.id.textViewPotionPcs);
+        TextView textViewPcs = (TextView) getActivity().findViewById(R.id.textViewPortionPcs);
         textViewPcs.setText(stringServingNameWord);
 
         //Portion gram
-        EditText editTextPortionSizeGram = (EditText) getActivity().findViewById(R.id.editTextPotionSizeGram);
+        EditText editTextPortionSizeGram = (EditText) getActivity().findViewById(R.id.editTextPortionSizeGram);
         editTextPortionSizeGram.setText(stringServingSize);
 
         //Image
@@ -505,7 +505,7 @@ public class AddFoodToDiaryFragment extends Fragment {
             lockPortionSizeByPcs = true;
 
             //Get value of pcs
-            EditText editTextPortionSizePcs = (EditText) getActivity().findViewById(R.id.editTextPotionSizePcs);
+            EditText editTextPortionSizePcs = (EditText) getActivity().findViewById(R.id.editTextPortionSizePcs);
             String stringPortionSizePcs = editTextPortionSizePcs.getText().toString();
 
             double doublePortionSizePcs = 0;
@@ -554,7 +554,7 @@ public class AddFoodToDiaryFragment extends Fragment {
             double doublePortionSizeGram = Math.round(doublePortionSizePcs * doubleServingSize);
 
             //Update portion size gram
-            EditText editTextPortionSizeGram = (EditText) getActivity().findViewById(R.id.editTextPotionSizeGram);
+            EditText editTextPortionSizeGram = (EditText) getActivity().findViewById(R.id.editTextPortionSizeGram);
             editTextPortionSizeGram.setText("" + doublePortionSizeGram);
 
 
@@ -570,7 +570,7 @@ public class AddFoodToDiaryFragment extends Fragment {
             lockPortionSizeByGram = true;
 
             //Get value of gram
-            EditText editTextPortionSizeGram = (EditText) getActivity().findViewById(R.id.editTextPotionSizeGram);
+            EditText editTextPortionSizeGram = (EditText) getActivity().findViewById(R.id.editTextPortionSizeGram);
             String stringPortionSizeGram = editTextPortionSizeGram.getText().toString();
 
             double doublePortionSizeGram = 0;
@@ -617,7 +617,7 @@ public class AddFoodToDiaryFragment extends Fragment {
             double doublePortionSizePcs = Math.round(doublePortionSizeGram / doubleServingSizeGram);
 
             //Update portion size gram
-            EditText editTextPortionSizePcs = (EditText) getActivity().findViewById(R.id.editTextPotionSizePcs);
+            EditText editTextPortionSizePcs = (EditText) getActivity().findViewById(R.id.editTextPortionSizePcs);
             editTextPortionSizePcs.setText("" + doublePortionSizePcs);
 
         }
@@ -688,7 +688,7 @@ public class AddFoodToDiaryFragment extends Fragment {
         String stringImageC = foodCursor.getString(21);
 
         //Get gram
-        EditText editTextPortionSizeGram = (EditText) getActivity().findViewById(R.id.editTextPotionSizeGram);
+        EditText editTextPortionSizeGram = (EditText) getActivity().findViewById(R.id.editTextPortionSizeGram);
         String fdServingSizeGram = editTextPortionSizeGram.getText().toString();
         String fdServingSizeGramSQL = db.quoteSmart(fdServingSizeGram);
         double doublePortionSizeGram = 0;
@@ -721,7 +721,7 @@ public class AddFoodToDiaryFragment extends Fragment {
             stringDay = "" + day;
         }
 
-        String stringFdDate = year + "-" + stringMonth + "-" + stringDay;
+        String stringFdDate = year + "/" + stringMonth + "/" + stringDay;
         String stringFdDateSQL = db.quoteSmart(stringFdDate);
 
         //Meal number

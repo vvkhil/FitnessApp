@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class DBAdapter {
     //Variables
     private static final String databaseName = "stramdiet";
-    private static final int databaseVersion = 26;
+    private static final int databaseVersion = 27;
 
     //Database Variables
     private final Context context;
@@ -85,13 +85,13 @@ public class DBAdapter {
 
                 db.execSQL("CREATE TABLE IF NOT EXISTS food_diary_cal_eaten (" +
                         " _id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                        " cal_eaten_id INT," +
-                        " cal_eaten_date DATE," +
-                        " cal_eaten_meal_no INT," +
-                        " cal_eaten_energy INT," +
-                        " cal_eaten_proteins INT," +
-                        " cal_eaten_carbs INT," +
-                        " cal_eaten_fat INT);");
+                        " fdce_id INT," +
+                        " fdce_date DATE," +
+                        " fdce_meal_no INT," +
+                        " fdce_energy INT," +
+                        " fdce_proteins INT," +
+                        " fdce_carbs INT," +
+                        " fdce_fat INT);");
 
                 db.execSQL("CREATE TABLE IF NOT EXISTS food_diary (" +
                         " _id INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -256,6 +256,51 @@ public class DBAdapter {
     public Cursor select(String table, String[] fields, String whereClause, String whereCondition) throws SQLException {
 
         Cursor mCursor = db.query(table, fields, whereClause + "=" + whereCondition, null, null, null, null,  null);
+        if (mCursor != null) {
+            mCursor.moveToFirst();
+        }
+        return mCursor;
+    }
+
+    //Select All where(String)
+    public Cursor select(String table, String[] fields, String[] whereClause, String[] whereCondition, String[] whereAndOr) throws SQLException {
+
+//        Cursor cursorFdce;
+//        String fieldsFdce[] = new String[] {
+//                "_id",
+//                "fdce_id",
+//                "fdce_meal_no",
+//                "fdce_energy",
+//                "fdce_proteins",
+//                "fdce_carbs",
+//                "fdce_fat"
+//        };
+//
+//        String whereClause[] = new String[] {
+//                "fdce_date",
+//                "fdce_meal_no"
+//        };
+//
+//        String whereCondition[] = new String[] {
+//                stringDateSQL,
+//                stringMealNumberSQL
+//        };
+//
+//        String whereAndOr[] = new String[] {
+//                "AND"
+//        };
+
+        String where = "";
+        int arraySize = whereClause.length;
+        for (int x = 0; x < arraySize; x++) {
+            if (where.equals("")) {
+                where = whereClause[x] + "=" + whereCondition[x];
+            } else {
+                where = where + " " + whereAndOr[x-1] + " " + whereClause[x] + "=" + whereCondition[x];
+            }
+        }
+
+        Cursor mCursor = db.query(table, fields, where, null, null, null, null,  null);
         if (mCursor != null) {
             mCursor.moveToFirst();
         }
