@@ -13,8 +13,11 @@
     <item android:title="Update Email"
         android:id="@+id/menu_update_email"/>
 
-    <item android:title="Settings"
-        android:id="@+id/menu_settings"/>
+    <item android:title="Food Diary"
+        android:id="@+id/menu_food_diary"/>
+
+    <item android:title="Training"
+        android:id="@+id/menu_training"/>
 
     <item android:title="Change Password"
         android:id="@+id/menu_change_password"/>

@@ -19,6 +19,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.fitnessappjava.CalorieCounter.DietActivity;
 import com.example.fitnessappjava.R;
+import com.example.fitnessappjava.Training.TrainingActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -194,8 +195,11 @@ public class UserProfileActivity extends AppCompatActivity {
         } else if (id == R.id.menu_update_email) {
             Intent intent = new Intent(UserProfileActivity.this, UpdateEmailActivity.class);
             startActivity(intent);
-        } else if (id == R.id.menu_settings) {
+        } else if (id == R.id.menu_food_diary) {
             Intent intent = new Intent(UserProfileActivity.this, DietActivity.class);
+            startActivity(intent);
+        } else if (id == R.id.menu_training) {
+            Intent intent = new Intent(UserProfileActivity.this, TrainingActivity.class);
             startActivity(intent);
         } else if (id == R.id.menu_change_password) {
             Intent intent = new Intent(UserProfileActivity.this, ChangePasswordActivity.class);
