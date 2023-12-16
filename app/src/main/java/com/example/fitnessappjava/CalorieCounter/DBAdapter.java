@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class DBAdapter {
     //Variables
     private static final String databaseName = "stramdiet";
-    private static final int databaseVersion = 27;
+    private static final int databaseVersion = 31;
 
     //Database Variables
     private final Context context;
@@ -82,6 +82,15 @@ public class DBAdapter {
                         " user_mesurment VARCHAR," +
                         " user_last_seen TIME," +
                         " user_note VARCHAR);");
+
+                db.execSQL("CREATE TABLE IF NOT EXISTS food_diary_sum (" +
+                        " _id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        " food_diary_sum_id INT," +
+                        " food_diary_sum_date DATE," +
+                        " food_diary_sum_energy INT," +
+                        " food_diary_sum_proteins INT," +
+                        " food_diary_sum_carbs INT," +
+                        " food_diary_sum_fat INT);");
 
                 db.execSQL("CREATE TABLE IF NOT EXISTS food_diary_cal_eaten (" +
                         " _id INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -156,6 +165,7 @@ public class DBAdapter {
             //! All tables that are going to be dropped need to be listed here
             db.execSQL("DROP TABLE IF EXISTS goal");
             db.execSQL("DROP TABLE IF EXISTS users");
+            db.execSQL("DROP TABLE IF EXISTS food_diary_sum");
             db.execSQL("DROP TABLE IF EXISTS food_diary_cal_eaten");
             db.execSQL("DROP TABLE IF EXISTS food_diary");
             db.execSQL("DROP TABLE IF EXISTS categories");

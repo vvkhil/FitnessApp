@@ -61,6 +61,101 @@
                 android:padding="15dp">
 
                 <TableLayout
+                    android:id="@+id/tableLayoutGoalWithActivity"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/border">
+
+                    <TableRow
+                        android:id="@+id/tableRowHeadlineGoalWithActivity"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textViewHeadlineGoalWithActivity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:padding="6dp"
+                            android:text="Goal with activity" />
+
+                        <TextView
+                            android:id="@+id/textViewHeadlineFood"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:padding="6dp"
+                            android:text="Food" />
+
+                        <TextView
+                            android:id="@+id/textViewHeadlineRemaining"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:padding="6dp"
+                            android:text="Remaining" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRowBodyGoalWithActivity"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/textViewBodyGoalWithActivity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:padding="6dp"
+                            android:text="Goal with activity" />
+
+                        <TextView
+                            android:id="@+id/textViewBodyFood"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:padding="6dp"
+                            android:text="Food" />
+
+                        <TextView
+                            android:id="@+id/textViewBodyRemaining"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:layout_weight="1"
+                            android:padding="6dp"
+                            android:text="Remaining" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+                <TableLayout
                     android:id="@+id/tableLayoutBreakfast"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"

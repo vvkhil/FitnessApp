@@ -92,7 +92,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Extracting saved dd, mm, yyyy into different variables by creating an array delimited by "/"
-                String textSADoB[] = textDoB.split("/");
+                String textSADoB[] = textDoB.split("-");
 
                 int day = Integer.parseInt(textSADoB[0]);
                 int month = Integer.parseInt(textSADoB[1]) - 1; //to take care of month index starting from 0
@@ -105,7 +105,7 @@ public class UpdateProfileActivity extends AppCompatActivity {
                 picker = new DatePickerDialog(UpdateProfileActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                        editTextUpdateDoB.setText(dayOfMonth + "/" + (month + 1) + "/" + year);
+                        editTextUpdateDoB.setText(dayOfMonth + "-" + (month + 1) + "-" + year);
                     }
                 }, year, month, day);
 

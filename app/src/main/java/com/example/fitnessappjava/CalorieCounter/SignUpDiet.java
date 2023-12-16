@@ -279,17 +279,13 @@ public class SignUpDiet extends AppCompatActivity {
                         String textDoB = readUserDetails.doB;
                         String textGender = readUserDetails.gender;
 
-                        String textSADoB[] = textDoB.split("/");
+                        String textSADoB[] = textDoB.split("-");
 
                         int day = Integer.parseInt(textSADoB[0]);
                         int month = Integer.parseInt(textSADoB[1]) - 1; //to take care of month index starting from 0
                         int year = Integer.parseInt(textSADoB[2]);
 
-                        Toast.makeText(SignUpDiet.this, String.valueOf(year) + "-" + String.valueOf(month) + "-" + String.valueOf(day), Toast.LENGTH_LONG).show();
-
                         String dateOfBirth = String.valueOf(year) + "-" + String.valueOf(month) + "-" + String.valueOf(day);
-
-                        Toast.makeText(SignUpDiet.this, email + "\n" + textFullName + "\n" + textDoB + "\n" + textGender + "\n" + String.valueOf(finalHeightCm) + "\n" + String.valueOf(finalDoubleWeight), Toast.LENGTH_LONG).show();
 
                         //Insert into database
                         DBAdapter db = new DBAdapter(SignUpDiet.this);

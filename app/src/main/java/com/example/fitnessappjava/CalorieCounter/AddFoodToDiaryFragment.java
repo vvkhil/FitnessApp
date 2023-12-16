@@ -721,7 +721,7 @@ public class AddFoodToDiaryFragment extends Fragment {
             stringDay = "" + day;
         }
 
-        String stringFdDate = year + "/" + stringMonth + "/" + stringDay;
+        String stringFdDate = year + "-" + stringMonth + "-" + stringDay;
         String stringFdDateSQL = db.quoteSmart(stringFdDate);
 
         //Meal number
