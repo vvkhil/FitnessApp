@@ -1,6 +1,5 @@
 package com.example.fitnessappjava.CalorieCounter;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -47,7 +46,8 @@ public class CategoriesDietFragment extends Fragment implements
     private String mParam1;
     private String mParam2;
 
-    private Cursor categoriesCursor;
+    private Cursor listCursorCategory;
+    private Cursor listCursorFood;
     private View mainView;
 
     //Action buttons on toolbar
@@ -55,8 +55,11 @@ public class CategoriesDietFragment extends Fragment implements
     private MenuItem menuItemDelete;
 
     //Holder for buttons on toolbar
-    private String currentId;
-    private String currentName;
+    private String currentCategoryId;
+    private String currentCategoryName;
+
+    private String currentFoodId;
+    private String currentFoodName;
 
     //01 Constructor
     public CategoriesDietFragment() {
@@ -271,17 +274,17 @@ public class CategoriesDietFragment extends Fragment implements
                 "category_name",
                 "category_parent_id"
         };
-        categoriesCursor = db.select("categories", fields, "category_parent_id", parentID, "category_name", "ASC");
+        listCursorCategory = db.select("categories", fields, "category_parent_id", parentID, "category_name", "ASC");
 
         //Create an array
         ArrayList<String> values = new ArrayList<String>();
 
         //Convert categories to string
-        int categoriesCount = categoriesCursor.getCount();
+        int categoriesCount = listCursorCategory.getCount();
         for (int x = 0; x < categoriesCount; x++) {
-            values.add(categoriesCursor.getString(categoriesCursor.getColumnIndexOrThrow("category_name")));
+            values.add(listCursorCategory.getString(listCursorCategory.getColumnIndexOrThrow("category_name")));
 
-            categoriesCursor.moveToNext();
+            listCursorCategory.moveToNext();
         }
 
         //Close cursor
@@ -324,20 +327,20 @@ public class CategoriesDietFragment extends Fragment implements
     public void listItemClicked(int position) {
 
         //Move cursor to ID clicked
-        categoriesCursor.moveToPosition(position);
+        listCursorCategory.moveToPosition(position);
 
-        currentId = categoriesCursor.getString(0);
-        currentName = categoriesCursor.getString(1);
-        String parentID = categoriesCursor.getString(2);
+        currentCategoryId = listCursorCategory.getString(0);
+        currentCategoryName = listCursorCategory.getString(1);
+        String parentID = listCursorCategory.getString(2);
 
         //Change title
-        ((DietActivity)getActivity()).getSupportActionBar().setTitle(currentName);
+        ((DietActivity)getActivity()).getSupportActionBar().setTitle(currentCategoryName);
 
         //Move to sub class
-        populateList(currentId, currentName);
+        populateList(currentCategoryId, currentCategoryName);
 
         //Show food in category
-        showFoodInCategory(currentId, currentName, parentID);
+        showFoodInCategory(currentCategoryId, currentCategoryName, parentID);
     }
 
     //Show food in category
@@ -364,19 +367,19 @@ public class CategoriesDietFragment extends Fragment implements
                     "food_energy_calculated"
             };
 
-            categoriesCursor = db.select("food", fields, "food_category_id", categoryId, "food_name", "ASC");
+            listCursorFood = db.select("food", fields, "food_category_id", categoryId, "food_name", "ASC");
 
             //Find listView to populate
-            ListView listView = (ListView)getActivity().findViewById(R.id.listViewFood);
+            ListView listViewFood = (ListView)getActivity().findViewById(R.id.listViewFood);
 
             //Setup cursor adapter using cursor from last step
-            FoodCursorAdapter cursorAdapter = new FoodCursorAdapter(getActivity(), categoriesCursor);
+            FoodCursorAdapter cursorAdapter = new FoodCursorAdapter(getActivity(), listCursorFood);
 
-            listView.setAdapter(cursorAdapter);
+            listViewFood.setAdapter(cursorAdapter);
 
             //OnClick
 
-            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            listViewFood.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     foodListItemClicked(position);
@@ -390,6 +393,33 @@ public class CategoriesDietFragment extends Fragment implements
 
     //Food list item clicked
     private void foodListItemClicked(int intFoodListItemIndex) {
+
+        //We should use
+        currentFoodId = listCursorFood.getString(0);
+        currentFoodName = listCursorFood.getString(1);
+
+        Toast.makeText(getActivity(), currentFoodName, Toast.LENGTH_SHORT).show();
+
+//        //Change fragment to foodView
+//        //Initialize fragment
+//        Fragment fragment = null;
+//        Class fragmentClass = null;
+//        fragmentClass = AddFoodToDiaryFragment.class;
+//
+//        try {
+//            fragment = (Fragment) fragmentClass.newInstance();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        //Send variable
+//        Bundle bundle = new Bundle();
+//        bundle.putString("mealNumber", "" + mealNumber);
+//        fragment.setArguments(bundle);
+//
+//        //Need to pass meal number
+//        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+//        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
 
     }
 
@@ -409,7 +439,7 @@ public class CategoriesDietFragment extends Fragment implements
         //Ask for parent ID
         Cursor c;
         String fieldsC[] = new String[] {"category_parent_id"};
-        String currentIdSQL = db.quoteSmart(currentId);
+        String currentIdSQL = db.quoteSmart(currentCategoryId);
         c = db.select("categories", fieldsC, "_id", currentIdSQL);
         String currentParentID = c.getString(0);
         int intCurrentParentID = 0;
@@ -421,7 +451,7 @@ public class CategoriesDietFragment extends Fragment implements
 
         //Fill name
         EditText editTextName = (EditText)getActivity().findViewById(R.id.editText_categories_add_edit_name);
-        editTextName.setText(currentName);
+        editTextName.setText(currentCategoryName);
 
         //Fill spinner with categories
         String fields[] = new String[] {
@@ -512,7 +542,7 @@ public class CategoriesDietFragment extends Fragment implements
             }
 
             //Current ID to long
-            long longCurrentID = Long.parseLong(currentId);
+            long longCurrentID = Long.parseLong(currentCategoryId);
 
             //Ready variables
             long currentIDSQL = db.quoteSmart(longCurrentID);
@@ -568,7 +598,7 @@ public class CategoriesDietFragment extends Fragment implements
         db.open();
 
         //Current ID to long
-        long longCurrentID = Long.parseLong(currentId);
+        long longCurrentID = Long.parseLong(currentCategoryId);
 
         //Ready variables
         long currentIDSQL = db.quoteSmart(longCurrentID);

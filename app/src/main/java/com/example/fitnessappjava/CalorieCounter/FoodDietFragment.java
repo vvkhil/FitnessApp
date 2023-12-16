@@ -44,7 +44,7 @@ public class FoodDietFragment extends Fragment {
     private MenuItem menuItemDelete;
 
     //Holder for buttons on toolbar
-    private String currentId;
+    private String currentId = "";
     private String currentName;
 
     private String mParam1;
@@ -87,8 +87,19 @@ public class FoodDietFragment extends Fragment {
 
         ((DietActivity)getActivity()).getSupportActionBar().setTitle("Food");
 
-        //Populate the list of food
         populateListFood();
+
+//        //Get data from fragment
+//        Bundle bundle = this.getArguments();
+//        if (bundle != null) {
+//            currentId = bundle.getString("currentFoodId");
+//        }
+//        if (currentId.equals("")) {
+//            //Populate the list of food
+//            populateListFood();
+//        } else {
+//            preListItemClickedReadyCursor(); // We are coming from another class with currentFoodId
+//        }
 
         //Create menu
         setHasOptionsMenu(true);
@@ -177,6 +188,33 @@ public class FoodDietFragment extends Fragment {
             }
         });
 
+
+        db.close();
+
+    }
+
+    //We are coming another class, and need the cursor
+    public void preListItemClickedReadyCursor() {
+
+        DBAdapter db = new DBAdapter(getActivity());
+        db.open();
+
+        //Get categories
+        String fields[] = new String[] {
+                "_id",
+                "food_name",
+                "food_manufactor_name",
+                "food_description",
+                "food_serving_size_gram",
+                "food_serving_size_gram_mesurment",
+                "food_serving_size_pcs",
+                "food_serving_size_pcs_mesurment",
+                "food_energy_calculated"
+        };
+
+        String currentIdSQL = db.quoteSmart(currentId);
+
+        listCursor = db.select("food", fields, "_id", currentIdSQL, "food_name", "ASC");
 
         db.close();
 
@@ -1192,10 +1230,10 @@ public class FoodDietFragment extends Fragment {
                     " food_name, " +
                     " food_manufactor_name, " +
                     " food_description, " +
-                    " food_serving_size, " +
-                    " food_serving_mesurment, " +
-                    " food_serving_name_number, " +
-                    " food_serving_name_word, " +
+                    " food_serving_size_gram, " +
+                    " food_serving_size_gram_mesurment, " +
+                    " food_serving_size_pcs, " +
+                    " food_serving_size_pcs_mesurment, " +
                     " food_energy, " +
                     " food_proteins, " +
                     " food_carbohydrates, " +

@@ -68,16 +68,11 @@ public class DietActivity extends AppCompatActivity implements
         db.open();
 
         //Count rows in food
-        int numberRows = db.count("categories");
+        int numberRows = db.count("food");
 
         if (numberRows < 1) {
-//            db.insert("food",
-//                    "food_id, food_name, food_manufactor_name, food_serving_size, food_serving_mesurment, food_energy_calculated",
-//                    "NULL, 'Egg, whole, cooked, hard-boiled', 'Prior', '136.0', 'g', '211'");
 
-            Toast.makeText(this, "Loading setup...", Toast.LENGTH_LONG).show();
             DBSetupInsert setupInsert = new DBSetupInsert(this);
-//          setupInsert.setupInsertToFood("NULL, 'Pasta', 'Danone', '600', 'gram', '1', 'portion', '512', '16.1', '37.1', '32', '3000', '97', ''230', '192', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL");
             setupInsert.insertAllFood();
             setupInsert.insertAllCategories();
         }

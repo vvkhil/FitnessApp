@@ -218,7 +218,7 @@ public class EditOrDeleteFoodToDiary extends Fragment {
         };
         String stringFdDateSQL = db.quoteSmart(stringFdDate);
         Cursor cursorFd = db.select("food_diary", fields, "fd_date", stringFdDateSQL);
-        String stringFdId = cursorFd.getString(0);
+        String stringFdId = "0";
 
         //Select for food name
         String fieldsFood[] = new String[]{
@@ -247,6 +247,7 @@ public class EditOrDeleteFoodToDiary extends Fragment {
         for (int x = 0; x < intCursorFdCount; x++) {
 
             //Variables from food diary
+            stringFdId = cursorFd.getString(0);
             stringFdFoodId = cursorFd.getString(1);
             stringFdFoodIdSQL = db.quoteSmart(stringFdFoodId);
 
@@ -360,7 +361,7 @@ public class EditOrDeleteFoodToDiary extends Fragment {
                 }
             });
 
-            //Watcher
+            //Listener
             Button buttonSubmitEdit = (Button) getActivity().findViewById(R.id.buttonSubmitEdit);
             buttonSubmitEdit.setOnClickListener(new View.OnClickListener() {
                 @Override
