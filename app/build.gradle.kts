@@ -44,6 +44,8 @@ dependencies {
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
     implementation("com.google.android.material:material:1.12.0-alpha01")
 
+    implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.19")
+
     implementation("com.facebook.stetho:stetho:1.4.1")
     implementation("com.facebook.stetho:stetho-okhttp3:1.4.1")
 
