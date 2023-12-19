@@ -224,7 +224,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="monospace"
                             android:padding="5dp"
-                            android:text="Nutrition or tips"
+                            android:text="Tips and tricks"
                             android:textColor="#ff000000"
                             android:textSize="20dp"
                             android:textStyle="bold"/>

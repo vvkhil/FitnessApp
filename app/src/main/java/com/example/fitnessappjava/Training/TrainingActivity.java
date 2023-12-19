@@ -60,7 +60,7 @@ public class TrainingActivity extends AppCompatActivity {
 
     public void food(View view) {
 
-        Intent intent = new Intent(TrainingActivity.this, SecondTrainingActivity.class);
+        Intent intent = new Intent(TrainingActivity.this, TipsActivity.class);
         startActivity(intent);
 
     }

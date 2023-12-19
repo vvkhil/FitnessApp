@@ -21,7 +21,7 @@
                 android:src="@drawable/exersice_9"/>
 
             <Button
-                android:id="@+id/timeActivityBow"
+                android:id="@+id/timeActivity"
                 android:layout_width="170dp"
                 android:layout_height="170dp"
                 android:layout_marginLeft="105dp"
@@ -31,7 +31,7 @@
                 android:background="@drawable/button_bg_round"/>
 
             <Button
-                android:id="@+id/startButtonActivityBow"
+                android:id="@+id/startButtonActivity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
