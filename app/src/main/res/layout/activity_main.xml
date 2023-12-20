@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/imageView_logo"
-            android:text="tanzTalks.tech"
+            android:text="Fitness App"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/textView_app_name"
             android:layout_marginTop="10dp"
-            android:text="Welcome\nto\nAndroid Firebase App"
+            android:text="Welcome\nto\nFitness App"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
 

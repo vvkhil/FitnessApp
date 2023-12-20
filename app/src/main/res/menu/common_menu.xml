@@ -19,6 +19,9 @@
     <item android:title="Training"
         android:id="@+id/menu_training"/>
 
+    <item android:title="Tips and Tricks"
+        android:id="@+id/menu_tips"/>
+
     <item android:title="Change Password"
         android:id="@+id/menu_change_password"/>
 

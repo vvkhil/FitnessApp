@@ -46,9 +46,11 @@ dependencies {
 
     implementation("pl.droidsonroids.gif:android-gif-drawable:1.2.19")
     implementation("com.google.android.material:material:1.11.0")
+    implementation("com.google.android.gms:play-services-ads:22.6.0")
 
     implementation("com.facebook.stetho:stetho:1.4.1")
     implementation("com.facebook.stetho:stetho-okhttp3:1.4.1")
+    implementation("com.google.firebase:firebase-messaging:23.4.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

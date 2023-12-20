@@ -11,12 +11,15 @@ import android.widget.TextView;
 
 import com.example.fitnessappjava.R;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class TrainingActivityDetails extends AppCompatActivity {
 
     String buttonValue;
     Button startBtn;
     private CountDownTimer countDownTimer;
-    TextView mTextView;
+    TextView mTextView, textViewHow;
+    GifImageView gifImageView;
     private boolean mTimeRunning;
     private long mTimeLeftInMills;
 
@@ -33,49 +36,109 @@ public class TrainingActivityDetails extends AppCompatActivity {
         switch (intValue) {
 
             case 1:
-                setContentView(R.layout.activity_bow);
+                setContentView(R.layout.activity_exercise);
+                textViewHow = findViewById(R.id.textViewHow);
+                textViewHow.setText(getResources().getString(R.string.pose1));
+                gifImageView = findViewById(R.id.gifImage);
+                gifImageView.setImageResource(R.drawable.exersice_1);
                 break;
             case 2:
-                setContentView(R.layout.activity_bridge);
+                setContentView(R.layout.activity_exercise);
+                textViewHow = findViewById(R.id.textViewHow);
+                textViewHow.setText(getResources().getString(R.string.pose2));
+                gifImageView = findViewById(R.id.gifImage);
+                gifImageView.setImageResource(R.drawable.exersice_2);
                 break;
             case 3:
-                setContentView(R.layout.activity_chair);
+                setContentView(R.layout.activity_exercise);
+                textViewHow = findViewById(R.id.textViewHow);
+                textViewHow.setText(getResources().getString(R.string.pose3));
+                gifImageView = findViewById(R.id.gifImage);
+                gifImageView.setImageResource(R.drawable.exersice_3);
                 break;
             case 4:
-                setContentView(R.layout.activity_child);
+                setContentView(R.layout.activity_exercise);
+                textViewHow = findViewById(R.id.textViewHow);
+                textViewHow.setText(getResources().getString(R.string.pose4));
+                gifImageView = findViewById(R.id.gifImage);
+                gifImageView.setImageResource(R.drawable.exersice_4);
                 break;
             case 5:
-                setContentView(R.layout.activity_cobbler);
+                setContentView(R.layout.activity_exercise);
+                textViewHow = findViewById(R.id.textViewHow);
+                textViewHow.setText(getResources().getString(R.string.pose5));
+                gifImageView = findViewById(R.id.gifImage);
+                gifImageView.setImageResource(R.drawable.exersice_5);
                 break;
             case 6:
-                setContentView(R.layout.activity_cow);
+                setContentView(R.layout.activity_exercise);
+                textViewHow = findViewById(R.id.textViewHow);
+                textViewHow.setText(getResources().getString(R.string.pose6));
+                gifImageView = findViewById(R.id.gifImage);
+                gifImageView.setImageResource(R.drawable.exersice_6);
                 break;
             case 7:
-                setContentView(R.layout.activity_playji);
+                setContentView(R.layout.activity_exercise);
+                textViewHow = findViewById(R.id.textViewHow);
+                textViewHow.setText(getResources().getString(R.string.pose7));
+                gifImageView = findViewById(R.id.gifImage);
+                gifImageView.setImageResource(R.drawable.exersice_7);
                 break;
             case 8:
-                setContentView(R.layout.activity_pauseji);
+                setContentView(R.layout.activity_exercise);
+                textViewHow = findViewById(R.id.textViewHow);
+                textViewHow.setText(getResources().getString(R.string.pose8));
+                gifImageView = findViewById(R.id.gifImage);
+                gifImageView.setImageResource(R.drawable.exersice_8);
                 break;
             case 9:
-                setContentView(R.layout.activity_plank);
+                setContentView(R.layout.activity_exercise);
+                textViewHow = findViewById(R.id.textViewHow);
+                textViewHow.setText(getResources().getString(R.string.pose9));
+                gifImageView = findViewById(R.id.gifImage);
+                gifImageView.setImageResource(R.drawable.exersice_9);
                 break;
             case 10:
-                setContentView(R.layout.activity_crunches);
+                setContentView(R.layout.activity_exercise);
+                textViewHow = findViewById(R.id.textViewHow);
+                textViewHow.setText(getResources().getString(R.string.pose10));
+                gifImageView = findViewById(R.id.gifImage);
+                gifImageView.setImageResource(R.drawable.exersice_10);
                 break;
             case 11:
-                setContentView(R.layout.activity_situp);
+                setContentView(R.layout.activity_exercise);
+                textViewHow = findViewById(R.id.textViewHow);
+                textViewHow.setText(getResources().getString(R.string.pose11));
+                gifImageView = findViewById(R.id.gifImage);
+                gifImageView.setImageResource(R.drawable.exersice_11);
                 break;
             case 12:
-                setContentView(R.layout.activity_rotation);
+                setContentView(R.layout.activity_exercise);
+                textViewHow = findViewById(R.id.textViewHow);
+                textViewHow.setText(getResources().getString(R.string.pose12));
+                gifImageView = findViewById(R.id.gifImage);
+                gifImageView.setImageResource(R.drawable.exersice_12);
                 break;
             case 13:
-                setContentView(R.layout.activity_twist);
+                setContentView(R.layout.activity_exercise);
+                textViewHow = findViewById(R.id.textViewHow);
+                textViewHow.setText(getResources().getString(R.string.pose13));
+                gifImageView = findViewById(R.id.gifImage);
+                gifImageView.setImageResource(R.drawable.exersice_13);
                 break;
             case 14:
-                setContentView(R.layout.activity_windmill);
+                setContentView(R.layout.activity_exercise);
+                textViewHow = findViewById(R.id.textViewHow);
+                textViewHow.setText(getResources().getString(R.string.pose14));
+                gifImageView = findViewById(R.id.gifImage);
+                gifImageView.setImageResource(R.drawable.exersice_14);
                 break;
             case 15:
-                setContentView(R.layout.activity_legup);
+                setContentView(R.layout.activity_exercise);
+                textViewHow = findViewById(R.id.textViewHow);
+                textViewHow.setText(getResources().getString(R.string.pose15));
+                gifImageView = findViewById(R.id.gifImage);
+                gifImageView.setImageResource(R.drawable.exersice_15);
                 break;
 
         }

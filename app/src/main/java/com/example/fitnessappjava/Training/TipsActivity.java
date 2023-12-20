@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.example.fitnessappjava.R;
+import com.example.fitnessappjava.SignInUpProfile.UserProfileActivity;
 
 public class TipsActivity extends AppCompatActivity {
 
@@ -44,7 +45,7 @@ public class TipsActivity extends AppCompatActivity {
 
     public void tipsGoBack(View view) {
 
-        Intent intent = new Intent(TipsActivity.this, TrainingActivity.class);
+        Intent intent = new Intent(TipsActivity.this, UserProfileActivity.class);
         startActivity(intent);
         finish();
 
@@ -54,7 +55,7 @@ public class TipsActivity extends AppCompatActivity {
     public void onBackPressed() {
 
         super.onBackPressed();
-        Intent intent = new Intent(TipsActivity.this, TrainingActivity.class);
+        Intent intent = new Intent(TipsActivity.this, UserProfileActivity.class);
         startActivity(intent);
         finish();
 

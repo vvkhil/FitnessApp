@@ -15,10 +15,11 @@
             android:orientation="vertical">
 
             <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/gifImage"
                 android:layout_width="fill_parent"
                 android:layout_height="200dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/exersice_7"/>
+                android:src="@drawable/exersice_1"/>
 
             <Button
                 android:id="@+id/timeActivity"
@@ -76,10 +77,11 @@
                     android:orientation="horizontal">
 
                     <TextView
+                        android:id="@+id/textViewHow"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#ecede8"
-                        android:text="@string/pose7"
+                        android:text="@string/pose1"
                         android:textColor="#000000"
                         android:textSize="18sp"/>
 

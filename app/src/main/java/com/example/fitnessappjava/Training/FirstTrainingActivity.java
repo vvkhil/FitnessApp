@@ -9,17 +9,28 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.fitnessappjava.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.sql.Array;
 
 public class FirstTrainingActivity extends AppCompatActivity {
 
     int[] newArray;
+    private AdView mAdView, mAdViewSecond;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_training);
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        mAdViewSecond = findViewById(R.id.adViewSecond);
+        AdRequest adRequestSecond = new AdRequest.Builder().build();
+        mAdViewSecond.loadAd(adRequestSecond);
 
         newArray = new int[] {
                 R.id.bow_pose,
