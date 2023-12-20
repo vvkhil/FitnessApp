@@ -3,6 +3,7 @@ package com.example.fitnessappjava.SignInUpProfile;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -34,6 +35,9 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editTextLoginEmail, editTextLoginPwd;
     private ProgressBar progressBar;
     private FirebaseAuth authProfile;
+
+    private SwipeRefreshLayout swipeContainer;
+
     private static final String TAG = "LoginActivity";
 
     @Override
@@ -42,6 +46,8 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         getSupportActionBar().setTitle("Login");
+
+        swipeToRefresh();
 
         editTextLoginEmail = findViewById(R.id.editText_login_email);
         editTextLoginPwd = findViewById(R.id.editText_login_pwd);
@@ -113,6 +119,25 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+
+    }
+
+    private void swipeToRefresh() {
+        //Look up for the Swipe Container
+        swipeContainer = findViewById(R.id.swipeContainer);
+
+        //Setup Refresh Listener which triggers new data loading
+        swipeContainer.setOnRefreshListener(() -> {
+            //Code to refresh goes here. Make sure to call swipeContainer.setRefresh(false) once the refresh is complete
+            startActivity(getIntent());
+            finish();
+            overridePendingTransition(0, 0);
+            swipeContainer.setRefreshing(false);
+        });
+
+        //Configure refresh colors
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright, android.R.color.holo_green_light,
+                android.R.color.holo_orange_light, android.R.color.holo_red_light);
 
     }
 

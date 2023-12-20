@@ -94,7 +94,11 @@ public class DBSetupInsert {
 
     //Insert all food into food database
     public void insertAllFood() {
-        setupInsertToFood("NULL, 'Pasta', 'Danone', '600', 'gram', '1', 'portion', '512', '16.1', '37.1', '32', '3000', '97', '230', '192', NULL, NULL, 8, NULL, NULL, NULL, NULL, NULL");
+        setupInsertToFood("NULL, 'Egg and Bacon on Biscuit', 'Komunarka', '150', 'gram', '1', 'sandwich', '378', '14', '23.6', '25.7', '567', '21', '35.4', '38.55', NULL, NULL, 8, NULL, NULL, NULL, NULL, NULL");
+        setupInsertToFood("NULL, 'Egg', 'Molo', '50', 'gram', '1', 'large', '147', '12.5', '0.7', '10', '74', '6.3', '0.4', '5', NULL, NULL, 25, NULL, NULL, NULL, NULL, NULL");
+        setupInsertToFood("NULL, 'Cheese Pizza', 'Tempo', '90', 'gram', '1', 'piece', '276', '12.3', '30.3', '11.7', '237', '10.6', '26.08', '10.1', NULL, NULL, 30, NULL, NULL, NULL, NULL, NULL");
+        setupInsertToFood("NULL, 'Chicken Leg', 'Ferm', '110', 'gram', '1', 'leg', '232', '26', '1', '13.5', '264', '29.6', '1.5', '15.3', NULL, NULL, 22, NULL, NULL, NULL, NULL, NULL");
+        setupInsertToFood("NULL, 'Coca-Cola', 'Bonaqua', '240', 'gram', '1', 'glass', '100', '1', '27', '1', '240', '2.4', '64.8', '2.4', NULL, NULL, 10, NULL, NULL, NULL, NULL, NULL");
     }
 
 }

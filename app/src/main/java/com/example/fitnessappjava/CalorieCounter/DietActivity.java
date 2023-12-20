@@ -81,12 +81,9 @@ public class DietActivity extends AppCompatActivity implements
         //Count rows in user table
         numberRows = db.count("users");
         if(numberRows < 1) {
-            Toast.makeText(this, "Sign up...", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(DietActivity.this, SignUpDiet.class);
             startActivity(intent);
         }
-
-        Toast.makeText(this, "There are " + numberRows + " in the table", Toast.LENGTH_LONG).show();
 
         db.close();
     }

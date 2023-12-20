@@ -3,6 +3,7 @@ package com.example.fitnessappjava.SignInUpProfile;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -33,12 +34,16 @@ public class ChangePasswordActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private String userPwdCurr;
 
+    private SwipeRefreshLayout swipeContainer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_password);
 
         getSupportActionBar().setTitle("Change Password");
+
+        swipeToRefresh();
 
         editTextPwdNew = findViewById(R.id.editText_change_pwd_new);
         editTextPwdCurr = findViewById(R.id.editText_change_pwd_current);
@@ -64,6 +69,25 @@ public class ChangePasswordActivity extends AppCompatActivity {
         } else {
             reAuthenticateUser(firebaseUser);
         }
+
+    }
+
+    private void swipeToRefresh() {
+        //Look up for the Swipe Container
+        swipeContainer = findViewById(R.id.swipeContainer);
+
+        //Setup Refresh Listener which triggers new data loading
+        swipeContainer.setOnRefreshListener(() -> {
+            //Code to refresh goes here. Make sure to call swipeContainer.setRefresh(false) once the refresh is complete
+            startActivity(getIntent());
+            finish();
+            overridePendingTransition(0, 0);
+            swipeContainer.setRefreshing(false);
+        });
+
+        //Configure refresh colors
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright, android.R.color.holo_green_light,
+                android.R.color.holo_orange_light, android.R.color.holo_red_light);
 
     }
 
@@ -172,53 +196,53 @@ public class ChangePasswordActivity extends AppCompatActivity {
     }
 
     //Creating ActionBar Menu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        //Inflate menu items
-        getMenuInflater().inflate(R.menu.common_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    //When any menu item is selected
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.menu_refresh) {
-            //Refresh Activity
-            startActivity(getIntent());
-            finish();
-            overridePendingTransition(0, 0);
-        } else if (id == R.id.menu_update_profile) {
-            Intent intent = new Intent(ChangePasswordActivity.this, UpdateProfileActivity.class);
-            startActivity(intent);
-            finish();
-        } else if (id == R.id.menu_update_email) {
-            Intent intent = new Intent(ChangePasswordActivity.this, UpdateEmailActivity.class);
-            startActivity(intent);
-            finish();
-//        } else if (id == R.id.menu_settings) {
-//            Toast.makeText(UserProfileActivity.this, "menu_settings", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.menu_change_password) {
-            Intent intent = new Intent(ChangePasswordActivity.this, ChangePasswordActivity.class);
-            startActivity(intent);
-            finish();
-        } else if (id == R.id.menu_delete_profile) {
-            Intent intent = new Intent(ChangePasswordActivity.this, DeleteProfileActivity.class);
-            startActivity(intent);
-        } else if (id == R.id.menu_logout) {
-            authProfile.signOut();
-            Toast.makeText(ChangePasswordActivity.this, "Logged Out", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(ChangePasswordActivity.this, MainActivity.class);
-
-            //Clear stack to prevent user coming back to UserProfileActivity on pressing back button after Logging out
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-            finish(); //Close UserProfileActivity
-        } else {
-            Toast.makeText(ChangePasswordActivity.this, "Something went wrong!", Toast.LENGTH_LONG).show();
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        //Inflate menu items
+//        getMenuInflater().inflate(R.menu.common_menu, menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+//
+//    //When any menu item is selected
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        int id = item.getItemId();
+//
+//        if (id == R.id.menu_refresh) {
+//            //Refresh Activity
+//            startActivity(getIntent());
+//            finish();
+//            overridePendingTransition(0, 0);
+//        } else if (id == R.id.menu_update_profile) {
+//            Intent intent = new Intent(ChangePasswordActivity.this, UpdateProfileActivity.class);
+//            startActivity(intent);
+//            finish();
+//        } else if (id == R.id.menu_update_email) {
+//            Intent intent = new Intent(ChangePasswordActivity.this, UpdateEmailActivity.class);
+//            startActivity(intent);
+//            finish();
+////        } else if (id == R.id.menu_settings) {
+////            Toast.makeText(UserProfileActivity.this, "menu_settings", Toast.LENGTH_SHORT).show();
+//        } else if (id == R.id.menu_change_password) {
+//            Intent intent = new Intent(ChangePasswordActivity.this, ChangePasswordActivity.class);
+//            startActivity(intent);
+//            finish();
+//        } else if (id == R.id.menu_delete_profile) {
+//            Intent intent = new Intent(ChangePasswordActivity.this, DeleteProfileActivity.class);
+//            startActivity(intent);
+//        } else if (id == R.id.menu_logout) {
+//            authProfile.signOut();
+//            Toast.makeText(ChangePasswordActivity.this, "Logged Out", Toast.LENGTH_LONG).show();
+//            Intent intent = new Intent(ChangePasswordActivity.this, MainActivity.class);
+//
+//            //Clear stack to prevent user coming back to UserProfileActivity on pressing back button after Logging out
+//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(intent);
+//            finish(); //Close UserProfileActivity
+//        } else {
+//            Toast.makeText(ChangePasswordActivity.this, "Something went wrong!", Toast.LENGTH_LONG).show();
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 }

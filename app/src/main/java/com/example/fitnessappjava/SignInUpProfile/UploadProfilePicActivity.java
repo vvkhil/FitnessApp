@@ -3,6 +3,7 @@ package com.example.fitnessappjava.SignInUpProfile;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -38,12 +39,16 @@ public class UploadProfilePicActivity extends AppCompatActivity {
     private static final int PICK_IMAGE_REQUEST = 1;
     private Uri uriImage;
 
+    private SwipeRefreshLayout swipeContainer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_profile_pic);
 
         getSupportActionBar().setTitle("Upload Profile Picture");
+
+        swipeToRefresh();
 
         Button buttonUploadPicChoose = findViewById(R.id.upload_pic_choose_button);
         Button buttonUploadPic = findViewById(R.id.upload_pic_button);
@@ -77,6 +82,25 @@ public class UploadProfilePicActivity extends AppCompatActivity {
                 UploadPic();
             }
         });
+    }
+
+    private void swipeToRefresh() {
+        //Look up for the Swipe Container
+        swipeContainer = findViewById(R.id.swipeContainer);
+
+        //Setup Refresh Listener which triggers new data loading
+        swipeContainer.setOnRefreshListener(() -> {
+            //Code to refresh goes here. Make sure to call swipeContainer.setRefresh(false) once the refresh is complete
+            startActivity(getIntent());
+            finish();
+            overridePendingTransition(0, 0);
+            swipeContainer.setRefreshing(false);
+        });
+
+        //Configure refresh colors
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright, android.R.color.holo_green_light,
+                android.R.color.holo_orange_light, android.R.color.holo_red_light);
+
     }
 
     private void openFileChooser() {
@@ -146,54 +170,54 @@ public class UploadProfilePicActivity extends AppCompatActivity {
     }
 
     //Creating ActionBar Menu
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        //Inflate menu items
-        getMenuInflater().inflate(R.menu.common_menu, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    //When any menu item is selected
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.menu_refresh) {
-            //Refresh Activity
-            startActivity(getIntent());
-            finish();
-            overridePendingTransition(0, 0);
-        } else if (id == R.id.menu_update_profile) {
-            Intent intent = new Intent(UploadProfilePicActivity.this, UpdateProfileActivity.class);
-            startActivity(intent);
-            finish();
-        } else if (id == R.id.menu_update_email) {
-            Intent intent = new Intent(UploadProfilePicActivity.this, UpdateEmailActivity.class);
-            startActivity(intent);
-            finish();
-//        } else if (id == R.id.menu_settings) {
-//            Toast.makeText(UserProfileActivity.this, "menu_settings", Toast.LENGTH_SHORT).show();
-        } else if (id == R.id.menu_change_password) {
-            Intent intent = new Intent(UploadProfilePicActivity.this, ChangePasswordActivity.class);
-            startActivity(intent);
-            finish();
-        } else if (id == R.id.menu_delete_profile) {
-            Intent intent = new Intent(UploadProfilePicActivity.this, DeleteProfileActivity.class);
-            startActivity(intent);
-            finish();
-        } else if (id == R.id.menu_logout) {
-            authProfile.signOut();
-            Toast.makeText(UploadProfilePicActivity.this, "Logged Out", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(UploadProfilePicActivity.this, MainActivity.class);
-
-            //Clear stack to prevent user coming back to UserProfileActivity on pressing back button after Logging out
-            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-            startActivity(intent);
-            finish(); //Close UserProfileActivity
-        } else {
-            Toast.makeText(UploadProfilePicActivity.this, "Something went wrong!", Toast.LENGTH_LONG).show();
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        //Inflate menu items
+//        getMenuInflater().inflate(R.menu.common_menu, menu);
+//        return super.onCreateOptionsMenu(menu);
+//    }
+//
+//    //When any menu item is selected
+//    @Override
+//    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+//        int id = item.getItemId();
+//
+//        if (id == R.id.menu_refresh) {
+//            //Refresh Activity
+//            startActivity(getIntent());
+//            finish();
+//            overridePendingTransition(0, 0);
+//        } else if (id == R.id.menu_update_profile) {
+//            Intent intent = new Intent(UploadProfilePicActivity.this, UpdateProfileActivity.class);
+//            startActivity(intent);
+//            finish();
+//        } else if (id == R.id.menu_update_email) {
+//            Intent intent = new Intent(UploadProfilePicActivity.this, UpdateEmailActivity.class);
+//            startActivity(intent);
+//            finish();
+////        } else if (id == R.id.menu_settings) {
+////            Toast.makeText(UserProfileActivity.this, "menu_settings", Toast.LENGTH_SHORT).show();
+//        } else if (id == R.id.menu_change_password) {
+//            Intent intent = new Intent(UploadProfilePicActivity.this, ChangePasswordActivity.class);
+//            startActivity(intent);
+//            finish();
+//        } else if (id == R.id.menu_delete_profile) {
+//            Intent intent = new Intent(UploadProfilePicActivity.this, DeleteProfileActivity.class);
+//            startActivity(intent);
+//            finish();
+//        } else if (id == R.id.menu_logout) {
+//            authProfile.signOut();
+//            Toast.makeText(UploadProfilePicActivity.this, "Logged Out", Toast.LENGTH_LONG).show();
+//            Intent intent = new Intent(UploadProfilePicActivity.this, MainActivity.class);
+//
+//            //Clear stack to prevent user coming back to UserProfileActivity on pressing back button after Logging out
+//            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+//            startActivity(intent);
+//            finish(); //Close UserProfileActivity
+//        } else {
+//            Toast.makeText(UploadProfilePicActivity.this, "Something went wrong!", Toast.LENGTH_LONG).show();
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 }

@@ -2,6 +2,7 @@ package com.example.fitnessappjava.SignInUpProfile;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,6 +27,9 @@ public class ForgotPasswordActivity extends AppCompatActivity {
     private EditText editTextPwdResetEmail;
     private ProgressBar progressBar;
     private FirebaseAuth authProfile;
+
+    private SwipeRefreshLayout swipeContainer;
+
     private final static String TAG = "ForgotPasswordActivity";
 
     @Override
@@ -34,6 +38,8 @@ public class ForgotPasswordActivity extends AppCompatActivity {
         setContentView(R.layout.activity_forgot_password);
 
         getSupportActionBar().setTitle("Forgot Password");
+
+        swipeToRefresh();
 
         editTextPwdResetEmail = findViewById(R.id.editText_password_reset_email);
         buttonPwdReset = findViewById(R.id.button_password_reset);
@@ -58,6 +64,25 @@ public class ForgotPasswordActivity extends AppCompatActivity {
                 }
             }
         });
+
+    }
+
+    private void swipeToRefresh() {
+        //Look up for the Swipe Container
+        swipeContainer = findViewById(R.id.swipeContainer);
+
+        //Setup Refresh Listener which triggers new data loading
+        swipeContainer.setOnRefreshListener(() -> {
+            //Code to refresh goes here. Make sure to call swipeContainer.setRefresh(false) once the refresh is complete
+            startActivity(getIntent());
+            finish();
+            overridePendingTransition(0, 0);
+            swipeContainer.setRefreshing(false);
+        });
+
+        //Configure refresh colors
+        swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright, android.R.color.holo_green_light,
+                android.R.color.holo_orange_light, android.R.color.holo_red_light);
 
     }
 

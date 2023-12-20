@@ -105,19 +105,19 @@ public class SignUpDiet extends AppCompatActivity {
             try {
                 heightCm = Double.parseDouble(height);
             } catch (NumberFormatException e) {
-                Toast.makeText(SignUpDiet.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                System.out.println(e);
             }
 
             try {
                 heightInch = Double.parseDouble(heightInches);
             } catch (NumberFormatException e) {
-                Toast.makeText(SignUpDiet.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                System.out.println(e);
             }
 
             try {
                 doubleWeight = Double.parseDouble(weight);
             } catch (NumberFormatException e) {
-                Toast.makeText(SignUpDiet.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                System.out.println(e);
             }
 
             if (heightCm != 0 && heightInch != 0) {
@@ -145,13 +145,13 @@ public class SignUpDiet extends AppCompatActivity {
             try {
                 heightCm = Double.parseDouble(height);
             } catch (NumberFormatException e) {
-                Toast.makeText(SignUpDiet.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                System.out.println(e);
             }
 
             try {
                 doubleWeight = Double.parseDouble(weight);
             } catch (NumberFormatException e) {
-                Toast.makeText(SignUpDiet.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                System.out.println(e);
             }
 
             if (heightCm != 0) {
@@ -209,19 +209,19 @@ public class SignUpDiet extends AppCompatActivity {
             try {
                 heightCm = Double.parseDouble(height);
             } catch (NumberFormatException e) {
-                Toast.makeText(SignUpDiet.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                System.out.println(e);
             }
 
             try {
                 heightInch = Double.parseDouble(heightInches);
             } catch (NumberFormatException e) {
-                Toast.makeText(SignUpDiet.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                System.out.println(e);
             }
 
             try {
                 doubleWeight = Double.parseDouble(weight);
             } catch (NumberFormatException e) {
-                Toast.makeText(SignUpDiet.this, e.getMessage(), Toast.LENGTH_LONG).show();
+                System.out.println(e);
             }
 
             Spinner spinnerMesurment = (Spinner) findViewById(R.id.spinnerMesurment);

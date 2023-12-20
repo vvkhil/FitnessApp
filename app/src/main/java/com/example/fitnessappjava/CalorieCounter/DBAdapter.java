@@ -12,7 +12,7 @@ import android.widget.Toast;
 public class DBAdapter {
     //Variables
     private static final String databaseName = "stramdiet";
-    private static final int databaseVersion = 31;
+    private static final int databaseVersion = 34;
 
     //Database Variables
     private final Context context;

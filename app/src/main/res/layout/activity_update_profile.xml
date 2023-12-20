@@ -21,7 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:orientation="vertical"
-                android:background="@color/purple_700">
+                android:background="@color/purple_200">
 
                 <TextView
                     android:id="@+id/textView_update_profile_head"

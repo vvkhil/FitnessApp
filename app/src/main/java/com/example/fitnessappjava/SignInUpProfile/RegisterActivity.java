@@ -2,6 +2,7 @@ package com.example.fitnessappjava.SignInUpProfile;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -276,5 +277,7 @@ public class RegisterActivity extends AppCompatActivity {
                         }
                     }
                 });
+
     }
+
 }
