@@ -9,6 +9,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +18,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.fitnessappjava.R;
+import com.example.fitnessappjava.SignInUpProfile.UserProfileActivity;
+import com.example.fitnessappjava.Training.TipsActivity;
 import com.google.android.material.navigation.NavigationView;
 
 
@@ -121,7 +124,7 @@ public class DietActivity extends AppCompatActivity implements
 
         if (id == R.id.nav_home) {
             fragmentClass = HomeDietFragment.class;
-        } else if (id == R.id.nav_profile) {
+        } else if (id == R.id.nav_height) {
             fragmentClass = ProfileDietFragment.class;
         } else if (id == R.id.nav_goal) {
             fragmentClass = GoalDietFragment.class;

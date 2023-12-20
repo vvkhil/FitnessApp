@@ -170,7 +170,7 @@ public class ProfileDietFragment extends Fragment {
             try {
                 heightCm = Double.parseDouble(stringUserHeight);
             } catch (NumberFormatException e) {
-                Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_SHORT).show();
+                System.out.println(e);
             }
             if (heightCm != 0) {
                 //Convert cm into feet
@@ -245,13 +245,13 @@ public class ProfileDietFragment extends Fragment {
             try {
                 heightCm = Double.parseDouble(height);
             } catch (NumberFormatException e) {
-                Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+                System.out.println(e);
             }
 
             try {
                 heightInch = Double.parseDouble(heightInches);
             } catch (NumberFormatException e) {
-                Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+                System.out.println(e);
             }
 
             if (heightCm != 0 && heightInch != 0) {
@@ -270,7 +270,7 @@ public class ProfileDietFragment extends Fragment {
             try {
                 heightCm = Double.parseDouble(height);
             } catch (NumberFormatException e) {
-                Toast.makeText(getActivity(), e.getMessage(), Toast.LENGTH_LONG).show();
+                System.out.println(e);
             }
 
             if (heightCm != 0) {

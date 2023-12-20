@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:orientation="vertical"
-                android:background="@color/purple_700">
+                android:background="@color/purple_500">
 
                 <TextView
                     android:id="@+id/textView_change_pwd_head"
@@ -30,7 +30,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:textColor="@color/white"
-                    android:text="Change your Password"
+                    android:text="Delete food"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
@@ -42,7 +42,7 @@
                     android:layout_marginRight="30dp"
                     android:textColor="@color/white"
                     android:layout_below="@id/textView_change_pwd_head"
-                    android:text="You can change your password after authenticating your profile by entering your current password"
+                    android:text="You can delete food"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
 

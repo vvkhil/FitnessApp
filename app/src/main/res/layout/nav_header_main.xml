@@ -12,12 +12,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageView"
         android:paddingTop="16dp"
-        android:src="@android:drawable/sym_def_app_icon"/>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="16dp"
-        android:text="Android Studio"/>
+        android:src="@drawable/food"/>
 
 </LinearLayout>

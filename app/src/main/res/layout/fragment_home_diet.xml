@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:orientation="vertical"
-                android:background="@color/purple_700">
+                android:background="@color/purple_200">
 
                 <TextView
                     android:id="@+id/textView_change_pwd_head"
@@ -31,7 +31,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:textColor="@color/white"
-                    android:text="Change your Password"
+                    android:text="Food diary"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
@@ -43,7 +43,7 @@
                     android:layout_marginRight="30dp"
                     android:textColor="@color/white"
                     android:layout_below="@id/textView_change_pwd_head"
-                    android:text="You can change your password after authenticating your profile by entering your current password"
+                    android:text="Here you can record your meals"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
 
@@ -206,8 +206,7 @@
                 <TableLayout
                     android:id="@+id/tableLayoutBreakfastItems"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border">
+                    android:layout_height="wrap_content">
 
                 </TableLayout>
 
@@ -262,8 +261,7 @@
                 <TableLayout
                     android:id="@+id/tableLayoutLunchItems"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border">
+                    android:layout_height="wrap_content">
 
                 </TableLayout>
 
@@ -318,8 +316,7 @@
                 <TableLayout
                     android:id="@+id/tableLayoutBeforeTrainingItems"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border">
+                    android:layout_height="wrap_content">
 
                 </TableLayout>
 
@@ -374,8 +371,7 @@
                 <TableLayout
                     android:id="@+id/tableLayoutAfterTrainingItems"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border">
+                    android:layout_height="wrap_content">
 
                 </TableLayout>
 
@@ -430,8 +426,7 @@
                 <TableLayout
                     android:id="@+id/tableLayoutDinnerItems"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border">
+                    android:layout_height="wrap_content">
 
                 </TableLayout>
 
@@ -486,8 +481,7 @@
                 <TableLayout
                     android:id="@+id/tableLayoutSnacksItems"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border">
+                    android:layout_height="wrap_content">
 
                 </TableLayout>
 
@@ -542,8 +536,7 @@
                 <TableLayout
                     android:id="@+id/tableLayoutSupperItems"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/border">
+                    android:layout_height="wrap_content">
 
                 </TableLayout>
 

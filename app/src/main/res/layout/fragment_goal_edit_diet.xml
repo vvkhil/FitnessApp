@@ -30,7 +30,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:textColor="@color/white"
-                    android:text="Change your Password"
+                    android:text="Change your goals"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
@@ -42,7 +42,7 @@
                     android:layout_marginRight="30dp"
                     android:textColor="@color/white"
                     android:layout_below="@id/textView_change_pwd_head"
-                    android:text="You can change your password after authenticating your profile by entering your current password"
+                    android:text="You can change your goals"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
 

@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:orientation="vertical"
-                android:background="@color/purple_700">
+                android:background="@color/purple_500">
 
                 <TextView
                     android:id="@+id/textView_change_pwd_head"
@@ -30,7 +30,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:textColor="@color/white"
-                    android:text="Change your Password"
+                    android:text="Your Goals"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Title" />
 
@@ -42,7 +42,7 @@
                     android:layout_marginRight="30dp"
                     android:textColor="@color/white"
                     android:layout_below="@id/textView_change_pwd_head"
-                    android:text="You can change your password after authenticating your profile by entering your current password"
+                    android:text="Here you can see your nutritional goals and the amount of calories you need"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Menu" />
 
@@ -275,7 +275,7 @@
                         android:layout_below="@+id/divider_table_fields"
                         android:padding="6dp"
                         android:textColor="@color/black"
-                        android:textSize="11dp"
+                        android:textSize="9dp"
                         android:text="Without activity" />
 
 
@@ -296,7 +296,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:layout_marginStart="25dp"
+                        android:layout_marginStart="20dp"
                         android:layout_toEndOf="@id/textViewGoalEnergyDiet"
                         android:layout_below="@+id/divider_table_fields"
                         android:padding="6dp"
@@ -308,7 +308,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:layout_marginStart="25dp"
+                        android:layout_marginStart="20dp"
                         android:layout_toEndOf="@id/textViewGoalProteinsDiet"
                         android:layout_below="@+id/divider_table_fields"
                         android:padding="6dp"
@@ -320,7 +320,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:layout_marginStart="25dp"
+                        android:layout_marginStart="20dp"
                         android:layout_toEndOf="@id/textViewGoalCarbsDiet"
                         android:layout_below="@+id/divider_table_fields"
                         android:padding="6dp"
@@ -337,7 +337,7 @@
                         android:layout_below="@+id/textViewLooseWithoutActivity"
                         android:padding="6dp"
                         android:textColor="@color/black"
-                        android:textSize="11dp"
+                        android:textSize="9dp"
                         android:text="With activity" />
 
                     <TextView
@@ -357,7 +357,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:layout_marginStart="25dp"
+                        android:layout_marginStart="20dp"
                         android:layout_toEndOf="@id/textViewGoalEnergyWithActivityAndDiet"
                         android:layout_below="@+id/textViewLooseWithoutActivity"
                         android:padding="6dp"
@@ -369,7 +369,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:layout_marginStart="25dp"
+                        android:layout_marginStart="20dp"
                         android:layout_toEndOf="@id/textViewGoalProteinsWithActivityAndDiet"
                         android:layout_below="@+id/textViewLooseWithoutActivity"
                         android:padding="6dp"
@@ -381,7 +381,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:layout_marginStart="25dp"
+                        android:layout_marginStart="20dp"
                         android:layout_toEndOf="@id/textViewGoalCarbsWithActivityAndDiet"
                         android:layout_below="@+id/textViewLooseWithoutActivity"
                         android:padding="6dp"
@@ -475,7 +475,7 @@
                         android:layout_below="@+id/divider_table_fields_keep"
                         android:padding="6dp"
                         android:textColor="@color/black"
-                        android:textSize="11dp"
+                        android:textSize="9dp"
                         android:text="Without activity" />
 
                     <TextView
@@ -495,7 +495,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:layout_marginStart="25dp"
+                        android:layout_marginStart="20dp"
                         android:layout_toEndOf="@id/textViewGoalEnergyBMR"
                         android:layout_below="@+id/divider_table_fields_keep"
                         android:padding="6dp"
@@ -507,7 +507,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:layout_marginStart="25dp"
+                        android:layout_marginStart="20dp"
                         android:layout_toEndOf="@id/textViewGoalProteinsBMR"
                         android:layout_below="@+id/divider_table_fields_keep"
                         android:padding="6dp"
@@ -519,7 +519,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:layout_marginStart="25dp"
+                        android:layout_marginStart="20dp"
                         android:layout_toEndOf="@id/textViewGoalCarbsBMR"
                         android:layout_below="@+id/divider_table_fields_keep"
                         android:padding="6dp"
@@ -535,7 +535,7 @@
                         android:layout_below="@+id/textViewKeepWithoutActivity"
                         android:padding="6dp"
                         android:textColor="@color/black"
-                        android:textSize="11dp"
+                        android:textSize="9dp"
                         android:text="With activity" />
 
                     <TextView
@@ -555,7 +555,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:layout_marginStart="25dp"
+                        android:layout_marginStart="20dp"
                         android:layout_toEndOf="@id/textViewGoalEnergyWithActivity"
                         android:layout_below="@+id/textViewKeepWithoutActivity"
                         android:padding="6dp"
@@ -567,7 +567,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:layout_marginStart="25dp"
+                        android:layout_marginStart="20dp"
                         android:layout_toEndOf="@id/textViewGoalProteinsWithActivity"
                         android:layout_below="@+id/textViewKeepWithoutActivity"
                         android:padding="6dp"
@@ -579,18 +579,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:layout_marginStart="25dp"
+                        android:layout_marginStart="20dp"
                         android:layout_toEndOf="@id/textViewGoalCarbsWithActivity"
                         android:layout_below="@+id/textViewKeepWithoutActivity"
                         android:padding="6dp"
                         android:textColor="@color/black"
                         android:text="Fat" />
 
-
-
-
                 </RelativeLayout>
-
 
                 <ProgressBar
                     android:id="@+id/progressBar"
